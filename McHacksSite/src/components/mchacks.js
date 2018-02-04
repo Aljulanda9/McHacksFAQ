@@ -13,7 +13,7 @@ export default {
 	name: 'mchacks',
 	data () {
 		return {
-			participants: [],
+			chats: [],
 			userInput: '',
 			message: '',
 			errorMessage: ''
@@ -21,10 +21,18 @@ export default {
 	},
 	methods:{
 		askQuestion: function (question) {
-			AXIOS.get(`http://hack.nuance.mobi/CognitivePlatform/Question?teamKey=team-ymolhxfofk-mghk&question=` + encodeURIComponent(question))
+			var y = '💁 '
+			var x = y.concat(question)
+			this.chats.push(x)
+			AXIOS.get(`http://hack2.nuance.mobi/CognitivePlatform/Question?teamKey=team-lvmrbdxshm-mghk&question=` + encodeURIComponent(question))
 		.then(response => {
 			// JSON responses are automatically parsed.
-			this.message = response.data.answers[0].summary
+			var answer = response.data.answers[0].summary
+			var bot = '🕵 '
+			var final = bot.concat(answer)
+			this.chats.push(final)
+			// this.message = response.data.answers[0].summary
+			this.userInput = ''
 		})
 		.catch(e => {
 			this.errorMessage = e;
