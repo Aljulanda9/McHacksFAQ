@@ -28,6 +28,11 @@ export default {
 		.then(response => {
 			// JSON responses are automatically parsed.
 			console.log(response)
+			if(response.data.length == 0){
+				var bot = '🕵 '
+				this.chats.push(bot.concat("lets try that again..."))
+				this.userInput = ''
+			}
 			var answer = response.data[0].answer.summary
 			var bot = '🕵 '
 			var final = bot.concat(answer)

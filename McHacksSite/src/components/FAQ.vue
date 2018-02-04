@@ -11,7 +11,7 @@
       </div>
     </div>
   </br>
-  <table align="center">
+  <table align="center" style="font-size:100%">
     <tr v-for="message in chats">
       {{message}}
     </tr>
