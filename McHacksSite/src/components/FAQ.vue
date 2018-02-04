@@ -1,10 +1,10 @@
 <template>
   <div id="Main">
 
-    <h3>Powered by QuickAns</h3>
-    <p>
-      Ask McHacks any question
-    </p>
+    <h1>QuickAns Chatbot</h1>
+    <h4>
+      This chatbot can answer any question about McHacks
+    </h4>
     <div>
       <div class="Input" align="center">
         <input type="text" id="input" class="Input-text" v-on:keyup.enter="askQuestion(userInput)" v-model="userInput" placeholder="Ask a question!">
@@ -97,22 +97,10 @@
     width: 1000px;
   }
 
-  .Title {
-    margin: 0 0 var(--gutterXx) 0;
-    padding: 0;
-    color: #fff;
-    font-size: var(--fontSizeXx);
-    font-weight: 400;
-    line-height: var(--lineHeightSm);
-    text-align: center;
-    text-shadow: -0.1rem 0.1rem 0.2rem var(--colorPrimary800);
-  }
-
   .Input {
     align: center;
     width: 300px;
     margin : 0 auto;
-
   }
 
   .Input-text {
@@ -122,6 +110,7 @@
     color: inherit;
     width: 100%;
     font-family: inherit;
+    text-align: center;
     font-size: var(--inputFontSize);
     font-weight: inherit;
     line-height: var(--inputLineHeight);

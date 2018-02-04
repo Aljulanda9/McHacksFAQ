@@ -24,10 +24,11 @@ export default {
 			var y = '💁 '
 			var x = y.concat(question)
 			this.chats.push(x)
-			AXIOS.get(`http://hack2.nuance.mobi/CognitivePlatform/Question?teamKey=team-lvmrbdxshm-mghk&question=` + encodeURIComponent(question))
+			AXIOS.get(`http://35.192.81.168/nik/question?contextId=381&limit=5&question=` + encodeURIComponent(question))
 		.then(response => {
 			// JSON responses are automatically parsed.
-			var answer = response.data.answers[0].summary
+			console.log(response)
+			var answer = response.data[0].answer.summary
 			var bot = '🕵 '
 			var final = bot.concat(answer)
 			this.chats.push(final)
